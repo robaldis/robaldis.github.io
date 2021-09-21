@@ -1,46 +1,41 @@
-<!Doctype html>
-<head>
-    <title>Robert Aldis</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+---
+layout: default
+---
 
-</head>
-<body>
-    <!--
-    <div class='navbar navbar-expand-ld navbar-light bg-light'>
-        <a class='navbar-brand' href='#'>Robert Aldis</a>
+<nav class="home-nav navbar navbar-expand-lg navbar-light p-3">
+  <p class="navbar-brand mb-0 border border-left-0 border-bottom-0 border-top-0 border-primary p-4" style='font-size:4rem;' href="#">Robert Aldis</p>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <div class="navbar-nav h3">
+      <a class="nav-item nav-link active h3 my-auto" href="#">Home</a>
+      <a class="nav-item nav-link h3 my-auto" href="#">Projects</a>
+      <a class="nav-item nav-link h3 my-auto" href="#">About</a>
+    </div>
+  </div>
+</nav>
 
-        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
-            <div class='navbar-nav'>
-                <a class='nav-item nav-link' href='#'> Home</a>
-                <a class='nav-item nav-link' href='about'>About</a>
-                <a class='nav-item nav-link' href='projects'>Projects</a>
-            </div>
+<div id='projects'  class='mx-auto mt-5 ' >
+    <h1 class='bg-heading border rounded text-center p-3 mb-4 '>Projects</h1>
+
+    {% for post in site.posts %}
+    <div class='my-3' id='project-homepage'>
+
+        <div class='pj-color text-right boarder rounded'>
+            <button type='button' class='align-middle m-3 btn btn-expand d-inline ' data-bs-toggle='collapse' data-bs-target='#{{post.name}}'>></button>
+            <h2 class='d-inline  align-middle' style='max-width:70%;'>{{post.title}}</h2>
+        </div>
+
+        <div id='{{post.name}}' class='collapse p-2 m-2 border rounded pj-color'>
+            <!--TODO: Change this to use template-->
+            <h3 class='underline'><u>Description</u></h3>
+            <!--TODO: Change this to use template-->
+            <p>{{post.excerpt}}</p>
+            <!--TODO: Change this to use template-->
+            <a class='btn m-2' type='button' href='{{post.githuburl}}'>Take me to the project</a>
+
         </div>
     </div>
-    
-    -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#">Features</a>
-          <a class="nav-item nav-link" href="#">Pricing</a>
-          <a class="nav-item nav-link disabled" href="#">Disabled</a>
-        </div>
-      </div>
-    </nav>
-
-    <div class='projects'>
-
-    </div>
-</body>
+    {% endfor %}
+</div>

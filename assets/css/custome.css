@@ -1,0 +1,55 @@
+:root {
+    /* bg */
+    --background: #e0610e;
+
+    /* muted */
+    --muted-background: #c76f34;
+
+
+    /* complametray */
+    --comp1: #0ee089;
+    --comp2: #4a0ee0;
+
+
+    --comp1-muted: #5e34c7;
+
+}
+
+
+
+body {
+    /*background: var(--comp1-muted);*/
+    background:#d0e2f5;
+    /*background:#f0efeb;*/
+    /*background:#bee1e6;*/
+}
+
+.pj-color{
+    background: var(--muted-background);
+
+}
+
+.bg-heading {
+    background: var(--bs-gray-500);
+}
+
+
+.home-nav {
+    background: var(--background);
+
+}
+
+.btn-expand {
+    background: var(--comp2);
+}
+
+
+
+#projects {
+    max-width:80%;
+}
+@media (min-width: 992px) {
+    #projects {
+        max-width: 60%;
+    }
+}
