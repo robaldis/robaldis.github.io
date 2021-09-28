@@ -1,48 +1,54 @@
 :root {
-    /* bg */
-    --background: #e0610e;
-
-    /* muted */
-    --muted-background: #c76f34;
-
-
-    /* complametray */
-    --comp1: #0ee089;
-    --comp2: #4a0ee0;
-
-
-    --comp1-muted: #5e34c7;
-
 }
 
-
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(-90deg);
+}
 
 body {
-    /*background: var(--comp1-muted);*/
-    background:#d0e2f5;
-    /*background:#f0efeb;*/
-    /*background:#bee1e6;*/
+    background:#ffffff;
 }
 
-.pj-color{
-    background: var(--muted-background);
-
+.color-primary {
+    color: #7c36ff
+}
+.color-accent {
+    color: #f7deff
+}
+.color-dark {
+    color: #000000
+}
+.border-accent {
+    border-color: #f7deff
+}
+.primary {
+    background: #7c36ff
 }
 
-.bg-heading {
-    background: var(--bs-gray-500);
+.accent {
+    background: #f7deff
 }
 
-
-.home-nav {
-    background: var(--background);
-
+.white {
+    background: #ffffff
 }
 
-.btn-expand {
-    background: var(--comp2);
+.black {
+    background: #000000
 }
 
+a:visited {
+    color: #000000
+}
+a:link {
+    color: #000000
+}
+a:hover {
+    color:#7c36ff;
+}
 
 
 #projects {

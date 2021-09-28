@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<nav class="home-nav navbar navbar-expand-lg navbar-light p-3">
-  <p class="navbar-brand mb-0 border border-left-0 border-bottom-0 border-top-0 border-primary p-4" style='font-size:4rem;' href="#">Robert Aldis</p>
+<nav class="home-nav navbar navbar-expand-lg navbar-light p-3 primary">
+  <p class="navbar-brand mb-0 p-4" style='font-size:4rem;' href="#">Robert Aldis</p>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,25 +16,25 @@ layout: default
   </div>
 </nav>
 
-<div id='projects'  class='mx-auto mt-5 ' >
-    <h1 class='bg-heading border rounded text-center p-3 mb-4 '>Projects</h1>
+<div id='projects'  class='mx-auto mt-5' >
+    <h1 class='bg-heading color-primary border border-dark rounded text-center p-3 mb-4'>Projects</h1>
 
     {% for post in site.posts %}
-    <div class='my-3' id='project-homepage'>
+    <div class='my-3 card' id='project-homepage'>
 
-        <div class='pj-color text-right boarder rounded'>
-            <button type='button' class='align-middle m-3 btn btn-expand d-inline ' data-bs-toggle='collapse' data-bs-target='#{{post.name}}'>></button>
-            <h2 class='d-inline  align-middle' style='max-width:70%;'>{{post.title}}</h2>
+        <div class="border-accent card-header" id="heading-example">
+            <h2 class="mb-0">
+                <a class='collapsed' style='text-decoration: none' data-bs-toggle="collapse" href='#{{post.name}}' aria-bs-expanded="true" aria-bs-controls='{{post.name}}'>
+                    <i class="fa fa-chevron-down pull-left"></i>
+                    {{post.title}}
+                </a>
+            </h2>
         </div>
 
         <div id='{{post.name}}' class='collapse p-2 m-2 border rounded pj-color'>
-            <!--TODO: Change this to use template-->
             <h3 class='underline'><u>Description</u></h3>
-            <!--TODO: Change this to use template-->
             <p>{{post.excerpt}}</p>
-            <!--TODO: Change this to use template-->
-            <a class='btn m-2' type='button' href='{{post.githuburl}}'>Take me to the project</a>
-
+            <a class='btn m-2 accent' type='button' href='{{post.githuburl}}'>Take me to the project</a>
         </div>
     </div>
     {% endfor %}
